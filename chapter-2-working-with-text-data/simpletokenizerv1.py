@@ -22,7 +22,7 @@ class SimpleTokenizerV1:
         text = re.sub(r'\s+([,.?!"()\'])', r"\1", text)
         return text
 
-    @str_to_id
+    @property
     def str_to_id(self):
         return self._str_to_id
 
@@ -31,7 +31,7 @@ class SimpleTokenizerV1:
         self._str_to_id = value
         self._id_to_str = {i: s for s, i in value.items()}
 
-    @id_to_str
+    @property
     def id_to_str(self):
         return self._id_to_str
 
