@@ -10,6 +10,6 @@ print(f"Character Length: {len(raw_text)}")
 # Basic tokenization
 tokenizer_regexp = re.compile(r"([,.]|\s)")
 result = tokenizer_regexp.split(raw_text)
-result = item for item in result if item.strip()] # Remove whitespace
+result = [item for item in result if item.strip()]  # Remove whitespace
 print(result)
 print(f"Basic Tokenization Length: {len(result)}")
