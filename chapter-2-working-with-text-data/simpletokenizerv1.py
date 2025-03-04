@@ -36,7 +36,7 @@ class SimpleTokenizerV1:
             }
             self._id_to_str = {i: s for s, i in self._str_to_id.items()}
         else:
-            raise TypeError(f"value can only be one of: list, dict. Got {type(value)")
+            raise TypeError(f"`value` can only be one of: list, dict. Got {type(value)")
 
     @property
     def id_to_str(self):
