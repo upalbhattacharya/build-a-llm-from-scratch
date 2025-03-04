@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from typing import Optional
+from typing import Optional, Union
 
 from build_a_llm_from_scratch.chapter_2_working_with_text_data.simpletokenizerv1 import (
     SimpleTokenizerV1,
@@ -17,6 +17,11 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
         if self._str_to_id and self._str_to_id.get("<|endoftext|>", None):
             self._str_to_id.update({"<|endoftext|>": len(self._str_to_id)})
             self._id_to_str.update({len(self._id_to_str): "<|endoftext|>"})
+
+    @property.setter
+    def str_to_id(self, value: Union[dict, list]):
+        super().str_to_id(value)
+        self._str_to_id.update
 
 
 if __name__ == "__main__":
