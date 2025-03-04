@@ -22,6 +22,10 @@ class SimpleTokenizerV1:
         text = re.sub(r'\s+([,.?!"()\'])', r'\1' text)
         return text
 
+    @property
+    def str_to_id(self)
+        return self.str_to_id
+
     @property.setter
     def str_to_id(self, vocab):
         self._str_to_id = vocab
