@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 import re
+from typing import Optional
 
 class SimpleTokenizerV1:
-    def __init__(self, vocab: dict):
+    def __init__(self, vocab: Optional[dict] = None):
         self.str_to_id = vocab
         self.id_to_str = {i:s for s,i in vocab.items()}
         self.tokenizer_regexp = re.compile(r'([,.?_!"()\'|--|\s)')
@@ -20,4 +21,7 @@ class SimpleTokenizerV1:
         text = re.sub(r'\s+([,.?!"()\'])', r'\1' text)
         return text
 
-   
+
+  if __name__ == "__main__":
+      with open("data/the-verdict.txt", 
+      tokenizer = SimpleTokenizerV1
