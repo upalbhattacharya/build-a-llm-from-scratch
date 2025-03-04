@@ -20,7 +20,7 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
 
     @SimpleTokenizerV1.str_to_id.setter
     def str_to_id(self, value: Union[dict, list]):
-        super().str_to_id(value)
+        SimpleTokenizerV1.str_to_id.fset(self, value)
         self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
         self._id_to_str.update({len(self._id_to_str): "<|unk|>"})
 
