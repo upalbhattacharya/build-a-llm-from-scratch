@@ -27,6 +27,13 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
         self._str_to_id.update({"<|endoftext|>": len(self._str_to_id)})
         self._id_to_str.update({len(self._id_to_str): "<|endoftext|>"})
 
+    def encode(self, text):
+        preprocessed = self.tokenizer_regexp.split(text)
+        preprocessed = [item.strip() for item in preprocessed if item.strip()]
+        ids = [self._str_to_id.get(s, self._str_to_id["<|unk|>"]
+                                                     for s in preprocessed]
+        return ids
+
 
 if __name__ == "__main__":
     with open("data/the-verdict.txt", "r", encoding="utf-8") as f:
