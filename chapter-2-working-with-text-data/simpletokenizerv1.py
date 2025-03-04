@@ -9,7 +9,7 @@ class SimpleTokenizerV1:
         if vocab:
             self._str_to_id = vocab
             self._id_to_str = {i: s for s, i in vocab.items()}
-        self.tokenizer_regexp = re.compile(r'([,.?_!"()\'|--|\s)')
+        self.tokenizer_regexp = re.compile(r'([,.?_!"()\']|--|\s)')
 
     def encode(self, text):
         preprocessed = self.tokenizer_regexp.split(text)
