@@ -29,9 +29,10 @@ class SimpleTokenizerV1:
     def str_to_id(self, value: Union[dict, list]):
         if isinstance(value, dict):
             self._str_to_id = value
+            self._id_to_str = {i: s for s, i in value.items()}
         elif isinstance(value, list):
             self._str_to_id = sorted(list(set(value)))
-        self._id_to_str = {i: s for s, i in value.items()}
+            self._id_to_str = {i: s for s, i in self._str_to_id.items()}
 
     @property
     def id_to_str(self):
