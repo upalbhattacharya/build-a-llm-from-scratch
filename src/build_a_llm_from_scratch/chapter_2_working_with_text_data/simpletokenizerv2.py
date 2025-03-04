@@ -10,8 +10,12 @@ from build_a_llm_from_scratch.chapter_2_working_with_text_data.simpletokenizerv1
 class SimpleTokenizerV2(SimpleTokenizerV1):
     def __init__(self, vocab: Optional[dict] = None):
         super().__init__(vocab)
-        if self._str_to_int.get("<|unk|>", None):
-            self._str_to_int.update({"<|unk|>": len(self._str_to_int)})
+        if self._str_to_id.get("<|unk|>", None):
+            self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
+            self._id_to_str.update({len(self._id_to_str): "<|unk|>"})
+
+        if self._str_to_id.get("<|unk|>", None):
+            self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
 
 
 if __name__ == "__main__":
