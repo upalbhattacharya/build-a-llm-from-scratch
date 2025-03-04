@@ -31,7 +31,7 @@ class SimpleTokenizerV1:
             self._str_to_id = value
             self._id_to_str = {i: s for s, i in value.items()}
         elif isinstance(value, list):
-            self._str_to_id = sorted(list(set(value)))
+            self._str_to_id = {token: i for i, token in enumerate(sorted(list(set(value))))
             self._id_to_str = {i: s for s, i in self._str_to_id.items()}
 
     @property
