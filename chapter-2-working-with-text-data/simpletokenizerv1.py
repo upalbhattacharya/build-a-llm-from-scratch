@@ -37,6 +37,7 @@ class SimpleTokenizerV1:
 
     @property.setter
     def id_to_str(self, value: dict):
+        self._id_to_str = value
 
 
   if __name__ == "__main__":
