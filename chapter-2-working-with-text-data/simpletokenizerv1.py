@@ -22,7 +22,14 @@ class SimpleTokenizerV1:
         text = re.sub(r'\s+([,.?!"()\'])', r'\1' text)
         return text
 
+    @property.setter
+    def str_to_id(self, vocab):
+        self._str_to_id = vocab
+        self._id_to_str = {i:s for s,i in vocab.items()}
+
 
   if __name__ == "__main__":
-      with open("data/the-verdict.txt", 
-      tokenizer = SimpleTokenizerV1
+      with open("data/the-verdict.txt", "r", encoding="utf-8") as f:
+          raw_text = f.read()
+      tokenizer = SimpleTokenizerV1(vocab=None)
+      vocab = tokenizer.tokenizer_regexp.split(raw_text)
