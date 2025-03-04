@@ -21,7 +21,11 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
     @property.setter
     def str_to_id(self, value: Union[dict, list]):
         super().str_to_id(value)
-        self._str_to_id.update
+        self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
+        self._id_to_str.update({len(self._id_to_str): "<|unk|>"})
+
+        self._str_to_id.update({"<|endoftext|>": len(self._str_to_id)})
+        self._id_to_str.update({len(self._id_to_str): "<|endoftext|>"})
 
 
 if __name__ == "__main__":
