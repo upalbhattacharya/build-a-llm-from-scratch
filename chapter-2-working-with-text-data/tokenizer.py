@@ -11,5 +11,5 @@ print(f"Character Length: {len(raw_text)}")
 tokenizer_regexp = re.compile(r'([,.:;?_!"()\']|\s)')  # Specific for this corpus
 result = tokenizer_regexp.split(raw_text)
 result = [item for item in result if item.strip()]  # Remove whitespace
-print(result)
+print(result[:30])
 print(f"Basic Tokenization Length: {len(result)}")
