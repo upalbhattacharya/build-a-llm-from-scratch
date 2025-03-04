@@ -58,5 +58,5 @@ if __name__ == "__main__":
     vocab = [item for item in vocab if item.strip()]
     print(vocab)
     # tokenizer.str_to_id = vocab
-    tokenize.str_to_id = "Test"
+    tokenizer.str_to_id = "Test"
     print(tokenizer.str_to_id)
