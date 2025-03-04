@@ -14,8 +14,9 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
             self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
             self._id_to_str.update({len(self._id_to_str): "<|unk|>"})
 
-        if self._str_to_id.get("<|unk|>", None):
-            self._str_to_id.update({"<|unk|>": len(self._str_to_id)})
+        if self._str_to_id.get("<|endoftext|>", None):
+            self._str_to_id.update({"<|endoftext|>": len(self._str_to_id)})
+            self._id_to_str.update({len(self._id_to_str): "<|endoftext|>"})
 
 
 if __name__ == "__main__":
