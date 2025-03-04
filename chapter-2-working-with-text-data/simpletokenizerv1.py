@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+"""Basic Tokenizer without OOV and EOT tokens"""
+
 import re
 from typing import Optional, Union
 
