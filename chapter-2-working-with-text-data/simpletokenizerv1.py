@@ -7,7 +7,7 @@ class SimpleTokenizerV1:
     def __init__(self, vocab: Optional[dict] = None):
         if vocab:
            self._str_to_id = vocab
-            self._id_to_str = {i:s for s,i in vocab.items()}
+           self._id_to_str = {i:s for s,i in vocab.items()}
         self.tokenizer_regexp = re.compile(r'([,.?_!"()\'|--|\s)')
 
     def encode(self, text):
