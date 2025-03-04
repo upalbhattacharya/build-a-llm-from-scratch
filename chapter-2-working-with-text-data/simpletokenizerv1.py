@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import re
-from typing import Optional
+from typing import Optional, Union
 
 
 class SimpleTokenizerV1:
@@ -26,7 +26,7 @@ class SimpleTokenizerV1:
         return self._str_to_id
 
     @str_to_id.setter
-    def str_to_id(self, value: dict):
+    def str_to_id(self, value: Union[dict, list]):
         self._str_to_id = value
         self._id_to_str = {i: s for s, i in value.items()}
 
