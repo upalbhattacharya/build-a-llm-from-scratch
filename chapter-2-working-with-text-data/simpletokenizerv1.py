@@ -23,13 +23,20 @@ class SimpleTokenizerV1:
         return text
 
     @property
-    def str_to_id(self)
-        return self.str_to_id
+    def str_to_id(self):
+        return self._str_to_id
 
     @property.setter
-    def str_to_id(self, vocab):
-        self._str_to_id = vocab
-        self._id_to_str = {i:s for s,i in vocab.items()}
+    def str_to_id(self, value: dict):
+        self._str_to_id = value
+        self._id_to_str = {i:s for s,i in value.items()}
+
+    @property
+    def id_to_str(self):
+        return self._id_to_str
+
+    @property.setter
+    def id_to_str(self, value: dict):
 
 
   if __name__ == "__main__":
@@ -37,3 +44,5 @@ class SimpleTokenizerV1:
           raw_text = f.read()
       tokenizer = SimpleTokenizerV1(vocab=None)
       vocab = tokenizer.tokenizer_regexp.split(raw_text)
+      tokenizer.str_to_id = vocab
+      print(toke
