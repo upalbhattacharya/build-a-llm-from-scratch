@@ -35,6 +35,7 @@ if __name__ == "__main__":
     vocab = tokenizer.tokenizer_regexp.split(raw_text)
     # Create
     vocab = [item.strip() for item in vocab if item.strip()]
+    print(vocab)
     tokenizer.str_to_id = vocab
     test_str = """"It's the last he painted, you know,"
                Mrs. Gisburn said with pardonable pride. Dabadoobie"""
