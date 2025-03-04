@@ -42,8 +42,7 @@ if __name__ == "__main__":
     # Create
     vocab = [item.strip() for item in vocab if item.strip()]
     tokenizer.str_to_id = vocab
-    test_str = """"It's the last he painted, you know,"
-               Mrs. Gisburn said with pardonable pride. Dabadoobie"""
+    test_str = """Oh how well will this work indeed? <|endoftext|> Come on now, you know all about Gemini, don't you?"""
     print(tokenizer.str_to_id)
     ids = tokenizer.encode(test_str)
     print(ids)
