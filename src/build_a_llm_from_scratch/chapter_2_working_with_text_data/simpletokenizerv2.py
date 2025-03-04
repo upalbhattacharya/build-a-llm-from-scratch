@@ -11,9 +11,7 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
     def __init__(self, vocab: Optional[dict] = None):
         super().__init__(vocab)
         if self._str_to_int.get("<|unk|>", None):
-            self._str_to_int.update({"<|unk|>": len(self._str_to_int)
-
-    
+            self._str_to_int.update({"<|unk|>": len(self._str_to_int)})
 
 
 if __name__ == "__main__":
