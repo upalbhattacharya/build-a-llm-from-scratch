@@ -1,5 +1,5 @@
 [project]
-name = "build-a-llm-from-scratch"
+name = "build_a_llm_from_scratch"
 version = "1.0.0"
 description = "Accompanying code for textbook: Build a Large Language Model (From Scratch)"
 authors = [
