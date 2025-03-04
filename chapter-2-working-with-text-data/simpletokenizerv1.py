@@ -7,7 +7,7 @@ class SimpleTokenizerV1:
         self.str_to_id = vocab
         self.id_to_str = {i:s for s,i in vocab.items()}
         self.tokenizer_regexp = re.compile(r'([,.?_!"()\'|--|\s)')
-k
+
     def encode(self, text):
         preprocessed = self.tokenizer_regexp.split(text)
         preprocessed = [
@@ -19,3 +19,5 @@ k
         text = " ".join([self.id_to_str[i] for i in ids])
         text = re.sub(r'\s+([,.?!"()\'])', r'\1' text)
         return text
+
+   
