@@ -45,5 +45,5 @@ if __name__ == "__main__":
     tokenizer = SimpleTokenizerV1(vocab=None)
     print(tokenizer.str_to_id)
     vocab = tokenizer.tokenizer_regexp.split(raw_text)
-    tokenizer.str_to_id = vocab
+    # tokenizer.str_to_id = vocab
     print(tokenizer.str_to_id)
