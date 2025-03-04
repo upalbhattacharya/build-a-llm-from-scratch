@@ -13,7 +13,7 @@ class SimpleTokenizerV1:
     def encode(self, text):
         preprocessed = self.tokenizer_regexp.split(text)
         preprocessed = [item.strip() for item in preprocessed if item.strip()]
-        ids = [self._str_to_id[s] for s in processed]
+        ids = [self._str_to_id[s] for s in preprocessed]
         return ids
 
     def decode(self, ids):
