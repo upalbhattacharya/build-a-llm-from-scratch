@@ -5,8 +5,9 @@ from typing import Optional
 
 class SimpleTokenizerV1:
     def __init__(self, vocab: Optional[dict] = None):
-        self.str_to_id = vocab
-        self.id_to_str = {i:s for s,i in vocab.items()}
+        if vocab:
+           self.str_to_id = vocab
+            self.id_to_str = {i:s for s,i in vocab.items()}
         self.tokenizer_regexp = re.compile(r'([,.?_!"()\'|--|\s)')
 
     def encode(self, text):
