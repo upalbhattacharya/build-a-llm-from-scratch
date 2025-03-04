@@ -1,0 +1,17 @@
+Metadata-Version: 2.2
+Name: build_a_llm_from_scratch
+Version: 1.0.0
+Summary: Accompanying code for textbook: Build a Large Language Model (From Scratch)
+Author-email: Upal Bhattacharya <u.bhattacharya@uu.nl>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: python-lsp-server>=1.12.2; extra == "dev"
+Requires-Dist: black>=25.1.0; extra == "dev"
+Requires-Dist: isort>=6.0.1; extra == "dev"
+Requires-Dist: pylint>=3.3.4; extra == "dev"
+Requires-Dist: jupyterlab>=4.3.5; extra == "dev"
+
+# Build a Large Language Model (From Scratch)
+
+Implementation of the textbook's exercises.

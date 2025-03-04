@@ -1,0 +1,15 @@
+.envrc
+.gitignore
+README.md
+pyproject.toml
+requirements-dev.txt
+src/build_a_llm_from_scratch/__init__.py
+src/build_a_llm_from_scratch.egg-info/PKG-INFO
+src/build_a_llm_from_scratch.egg-info/SOURCES.txt
+src/build_a_llm_from_scratch.egg-info/dependency_links.txt
+src/build_a_llm_from_scratch.egg-info/requires.txt
+src/build_a_llm_from_scratch.egg-info/top_level.txt
+src/build_a_llm_from_scratch/chapter_2_working_with_text_data/__init__.py
+src/build_a_llm_from_scratch/chapter_2_working_with_text_data/basic_tokenizer.py
+src/build_a_llm_from_scratch/chapter_2_working_with_text_data/simpletokenizerv1.py
+src/build_a_llm_from_scratch/chapter_2_working_with_text_data/simpletokenizerv2.py
