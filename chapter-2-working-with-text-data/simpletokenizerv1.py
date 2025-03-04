@@ -46,4 +46,4 @@ class SimpleTokenizerV1:
       tokenizer = SimpleTokenizerV1(vocab=None)
       vocab = tokenizer.tokenizer_regexp.split(raw_text)
       tokenizer.str_to_id = vocab
-      print(toke
+      print(tokenizer.str_to_id)
