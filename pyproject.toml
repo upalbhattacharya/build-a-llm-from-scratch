@@ -1,7 +1,7 @@
 [project]
-name = "Build a Large Language Model From Scratch"
+name = "build-a-llm-from-scratch"
 version = "1.0.0"
-description = "Accompanying code for textbook"
+description = "Accompanying code for textbook: Build a Large Language Model (From Scratch)"
 authors = [
   {name="Upal Bhattacharya", email="u.bhattacharya@uu.nl"},
 ]
