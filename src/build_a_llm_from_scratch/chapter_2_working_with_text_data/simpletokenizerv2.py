@@ -30,8 +30,7 @@ class SimpleTokenizerV2(SimpleTokenizerV1):
     def encode(self, text):
         preprocessed = self.tokenizer_regexp.split(text)
         preprocessed = [item.strip() for item in preprocessed if item.strip()]
-        ids = [self._str_to_id.get(s, self._str_to_id["<|unk|>"]
-                                                     for s in preprocessed]
+        ids = [self._str_to_id.get(s, self._str_to_id["<|unk|>"]) for s in preprocessed]
         return ids
 
 
