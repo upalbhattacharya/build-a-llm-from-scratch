@@ -8,7 +8,7 @@ with open("data/the-verdict.txt", "r", encoding="utf-8") as f:
 print(f"Character Length: {len(raw_text)}")
 
 # Basic tokenization
-tokenizer_regexp = re.compile(r'([,.:;?_!"()\']|\s)')  # Specific for this corpus
+tokenizer_regexp = re.compile(r'([,.:;?_!"()\']|--|\s)')  # Specific for this corpus
 result = tokenizer_regexp.split(raw_text)
 result = [item for item in result if item.strip()]  # Remove whitespace
 print(result[:30])
