@@ -50,5 +50,5 @@ if __name__ == "__main__":
     vocab = tokenizer.tokenizer_regexp.split(raw_text)
     vocab = [item for item in vocab if item.strip()]
     print(vocab)
-    # tokenizer.str_to_id = vocab
+    tokenizer.str_to_id = vocab
     print(tokenizer.str_to_id)
