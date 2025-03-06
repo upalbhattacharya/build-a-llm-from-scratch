@@ -64,5 +64,4 @@ if __name__ == "__main__":
     ids = tokenizer.encode(test_str)
     print(ids)
     print(tokenizer.decode(ids))
-    blah is a dog
-    
+    blah is a
