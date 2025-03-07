@@ -29,7 +29,7 @@ class BPETokenizerSimple:
     def load_vocab_and_merges(self, vocab_path, bpe_merges_path):
         pass
 
-    def fin_freq_pair(token_ids, mode="most"):
+    def find_freq_pair(token_ids, mode="most"):
         pass
 
     def replace_pair(token_ids, pair_id, new_id):
