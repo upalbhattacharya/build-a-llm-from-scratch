@@ -26,7 +26,7 @@ class BPETokenizerSimple:
         if " " not in unique_chars:
             unique_chars.append(" ")
 
-        self.vocab = {i: char for i, char in enumerate(unique_chars)}
+        self.vocab = dict(enumerate(unique_chars))
         self.inverse_vocab = {char: i for i, char in self.vocab.items()}
 
         # Iteratively add pairs
