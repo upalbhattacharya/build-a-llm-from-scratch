@@ -12,11 +12,20 @@ class BPETokenizerSimple:
         self.vocab: dict = {}
         self.inverse_vocab: dict = {}
         self.bpe_merges: dict = {}
-        pass
 
-    def train(self, *args, **kwargs):
+    def train(
+        self,
+        train_text: str,
+        vocab_size: int,
+        allowed_special: set(str) = {"<|endoftext|>"},
+    ):
 
-        # Create i
+        # Create initial dictionary
+        # First 256 ASCII characters
+        unique_chars = [chr(i) for i in range(256)]
+
+        # Iteratively add pairs
+
         pass
 
     def tokenize(self, token):
