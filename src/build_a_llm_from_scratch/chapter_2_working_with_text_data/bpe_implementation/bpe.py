@@ -6,6 +6,8 @@ import json
 from collections import Counter, deque
 from functools import lru_cache
 
+from tqdm import tqdm
+
 
 class BPETokenizerSimple:
     def __init__(self):
@@ -42,7 +44,7 @@ class BPETokenizerSimple:
         # Iteratively add pairs
         token_ids = [self.inverse_vocab[char] for char in train_text]
 
-        for new_id in range(len(self.vocab), vocab_size):
+        for new_id in tqdm(range(len(self.vocab), vocab_size)):
             pair_id = self.find_freq_pair(token_ids, mode="most")
             if pair_id is None:
                 break
