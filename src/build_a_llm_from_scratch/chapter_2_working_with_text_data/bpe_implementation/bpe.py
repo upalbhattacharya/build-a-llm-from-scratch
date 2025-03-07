@@ -92,7 +92,7 @@ class BPETokenizerSimple:
         else:
             raise ValueError("Invalid mode. Can only be one of: 'most', 'least'.")
 
-    def replace_pair(token_ids, pair_id, new_id):
+    def replace_pair(self, token_ids, pair_id, new_id):
         dq = deque(token_ids)
         replaced = []
 
