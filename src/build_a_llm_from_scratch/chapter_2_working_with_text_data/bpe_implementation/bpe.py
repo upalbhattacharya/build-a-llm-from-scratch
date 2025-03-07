@@ -23,6 +23,7 @@ class BPETokenizerSimple:
         # Create initial dictionary
         # First 256 ASCII characters
         unique_chars = [chr(i) for i in range(256)]
+        unique_chars.extend(char for char in sorted(set(train_text)) if char not in train_text)
         if " " not in unique_chars:
             unique_chars.append(" ")
 
@@ -38,6 +39,7 @@ class BPETokenizerSimple:
                     self.inverse_vocab[token] = new_id
 
         # Iteratively add pairs
+        token_ids = [self.inverse_vocab[char] for char in train_text
 
         pass
 
