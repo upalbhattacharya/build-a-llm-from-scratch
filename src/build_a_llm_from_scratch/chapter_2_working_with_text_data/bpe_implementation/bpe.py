@@ -45,6 +45,12 @@ class BPETokenizerSimple:
             if pair_id is None:
                 break:
             token_ids = self.replace_pair(token_ids, pair_id, new_id)
+            self.bpe_merges[pair_id] = new_id
+
+        for (p0, p1), new_id in self.bpe_merges.items():
+            merged_token = self.vocab[p0] + self.vocab[p1]
+            self.vocab[new_id] = merged_token
+            self.inverse_vocab[merged_token] = new_id
 
         pass
 
