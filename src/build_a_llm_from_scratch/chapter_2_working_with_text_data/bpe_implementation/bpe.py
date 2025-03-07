@@ -64,7 +64,15 @@ class BPETokenizerSimple:
         pass
 
     def save_vocab_and_merges(self, vocab_path, bpe_merges_path):
-        pass
+        # Save vocabulary
+        with open(vocab_path, "w", encoding="utf-8") as f:
+            json.dump(self.vocab, f, ensure_ascii=False, indent=4)
+
+        # Save BPE pairs
+        with open(bpe_merges_path, "w", encoding="utf-8") as f:
+            merges_list = = [{"pair": list(pair), "new_id": new_id}
+                for pair, new_id in self.bpe_merges.items()]
+            json.dump(merges_list, f, ensure_ascii=False, indent=2)
 
     def load_vocab_and_merges(self, vocab_path, bpe_merges_path):
         pass
