@@ -43,7 +43,7 @@ class BPETokenizerSimple:
         for new_id in range(len(self.vocab), vocab_size):
             pair_id = self.find_freq_pair(token_ids, mode="most")
             if pair_id is None:
-                break:
+                break
             token_ids = self.replace_pair(token_ids, pair_id, new_id)
             self.bpe_merges[pair_id] = new_id
 
