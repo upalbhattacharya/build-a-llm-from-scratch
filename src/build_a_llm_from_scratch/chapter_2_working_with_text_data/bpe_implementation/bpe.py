@@ -9,9 +9,14 @@ from functools import lru_cache
 
 class BPETokenizerSimple:
     def __init__(self):
+        self.vocab: dict = {}
+        self.inverse_vocab: dict = {}
+        self.bpe_merges: dict = {}
         pass
 
     def train(self, *args, **kwargs):
+
+        # Create i
         pass
 
     def tokenize(self, token):
