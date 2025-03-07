@@ -29,6 +29,14 @@ class BPETokenizerSimple:
         self.vocab = dict(enumerate(unique_chars))
         self.inverse_vocab = {char: i for i, char in self.vocab.items()}
 
+        # Add unique tokens
+        if allowed_special:
+            for token in allowed_special:
+                if token not in self.inverse_vocab:
+                    new_id = len(self.vocab)
+                    self.vocab[new_id] = token
+                    self.inverse_vocab[token] = new_id
+
         # Iteratively add pairs
 
         pass
