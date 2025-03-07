@@ -17,7 +17,7 @@ class BPETokenizerSimple:
         self,
         train_text: str,
         vocab_size: int,
-        allowed_special: set = {"<|endoftext|>"},
+        allowed_special: set[str] = {"<|endoftext|>"},
     ):
 
         # Create initial dictionary
