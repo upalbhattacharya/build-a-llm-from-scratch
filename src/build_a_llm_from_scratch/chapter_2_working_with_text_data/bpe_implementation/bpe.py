@@ -99,7 +99,7 @@ class BPETokenizerSimple:
         while dq:
             current = dq.popleft()
             if dq and (current, dq[0]) == pair_id:
-                replace.append(new_id)
+                replaced.append(new_id)
                 dq.popleft()
             else:
                 replaced.append(current)
