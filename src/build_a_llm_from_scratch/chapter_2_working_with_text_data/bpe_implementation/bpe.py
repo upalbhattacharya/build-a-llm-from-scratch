@@ -42,6 +42,9 @@ class BPETokenizerSimple:
 
         for new_id in range(len(self.vocab) vocab_size):
             pair_id = self.find_freq_pair(token_ids, mode="most")
+            if pair_id is None:
+                break:
+            token_ids = self.replace_pair(token_ids, pair_id, new_id)
 
         pass
 
@@ -72,7 +75,17 @@ class BPETokenizerSimple:
             raise ValueError("Invalid mode. Can only be one of: 'most', 'least'.")
 
     def replace_pair(token_ids, pair_id, new_id):
-        pass
+        dq = deque(token_ids)
+        replaced = []
+
+        while dq:
+            current = dq.popleft()
+            if dq and (current, dq[0]) == paid_id:
+                replace.append(new_id)
+                dq.popleft()
+           else:
+               replaced.append(current)
+        return replaced
 
     def get_special_token_id(self, token):
         pass
