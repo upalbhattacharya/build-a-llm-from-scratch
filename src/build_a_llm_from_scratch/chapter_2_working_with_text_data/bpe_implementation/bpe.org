@@ -6,6 +6,7 @@
 :ID:       026526c8-ff41-4fa0-9177-7e60360d5417
 :END:
 
+#+NAME: Per-character byte conversion
 #+BEGIN_SRC python :results output
   TEXT = "This is some text"
   byte_ary = bytearray(TEXT, "utf-8")
@@ -13,5 +14,5 @@
 #+END_SRC
 
 #+RESULTS:
-: None
+: bytearray(b'This is some text')
 
