@@ -70,7 +70,7 @@ class BPETokenizerSimple:
 
         # Save BPE pairs
         with open(bpe_merges_path, "w", encoding="utf-8") as f:
-            merges_list = = [{"pair": list(pair), "new_id": new_id}
+            merges_list = [{"pair": list(pair), "new_id": new_id}
                 for pair, new_id in self.bpe_merges.items()]
             json.dump(merges_list, f, ensure_ascii=False, indent=2)
 
