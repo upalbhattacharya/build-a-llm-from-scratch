@@ -22,7 +22,9 @@ class BPETokenizerSimple:
 
         # Create initial dictionary
         unique_chars = [chr(i) for i in range(256)]
-        unique_chars.extend(char for char in sorted(set(train_text)) if char not in train_text)
+        unique_chars.extend(
+            char for char in sorted(set(train_text)) if char not in train_text
+        )
         if " " not in unique_chars:
             unique_chars.append(" ")
 
@@ -70,8 +72,10 @@ class BPETokenizerSimple:
 
         # Save BPE pairs
         with open(bpe_merges_path, "w", encoding="utf-8") as f:
-            merges_list = [{"pair": list(pair), "new_id": new_id}
-                for pair, new_id in self.bpe_merges.items()]
+            merges_list = [
+                {"pair": list(pair), "new_id": new_id}
+                for pair, new_id in self.bpe_merges.items()
+            ]
             json.dump(merges_list, f, ensure_ascii=False, indent=2)
 
     def load_vocab_and_merges(self, vocab_path, bpe_merges_path):
@@ -97,8 +101,8 @@ class BPETokenizerSimple:
             if dq and (current, dq[0]) == paid_id:
                 replace.append(new_id)
                 dq.popleft()
-           else:
-               replaced.append(current)
+            else:
+                replaced.append(current)
         return replaced
 
     def get_special_token_id(self, token):
